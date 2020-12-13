@@ -5,16 +5,16 @@ Richardson, Tom & Kudekar, Shrinivas, <a href="https://ieeexplore.ieee.org/docum
 </br>
 
 ## Index
-#### 1. Abstract
-#### 2. Introduction    
+#### 0. Abstract
+#### 1. Introduction    
 - 5G NR Switches To LDPC Codes    
 - LDPC Codes
-#### <a href="./Ch2.md">3.Meeting NR Block Length and Rate Requirements</a>
+#### <a href="./Ch2.md">2.Meeting NR Block Length and Rate Requirements</a>
 - Multiple Base Graphs
 - Base Graph Shortening For Blocklength Granularity
-#### 4. 5G NR LDPC Design Details
+#### 3. 5G NR LDPC Design Details
 - Structure Of The Code Graph
 - Extension Structure
 - Lifting Design
-#### 5. Performance Results
-#### 6. Conclusion 
+#### 4. Performance Results
+#### 5. Conclusion 
