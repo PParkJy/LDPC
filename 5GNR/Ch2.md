@@ -40,7 +40,7 @@ A goal in the LDPC design is to have good performance across IR-HARQ extensions 
   : IR-HARQ를 지원하기 위해 확장(extension) 되는 데이터에도 좋은 성능을 보이는 것    
   : 예) K = 800, N = 900, R=8/9 -> 에러 발견 및 재전송 요청 -> 송신측에서 추가 redundancy 전송 -> N=2400, R=800/2400=1/3    
  
- </br>
+</br>
 
 ```
 The 5G NR LDPC codes are, strictly speaking, a concatenation of an LDPC code and a low-density generator matrix (LDGM) code. 
@@ -67,12 +67,16 @@ For structural reasons that we describe shortly, the core portion of the graph d
     : (1) 부분은 IR-HARQ를 위한 확장 노드로 사용되는데 첫번째 row의 첫번째 column에 위치한 (1)의 첫번째 Variable Node는 특별하다고 함    
     &nbsp;&nbsp; -> core 부분만을 사용하면 성능이 좋지 않다고 알려져 있기 때문에 적어도 몇 개의 (1)부분을 포함시켜야 하므로 (1)의 첫번째 Variable Node는 항상 R 계산에 사용됨    
 
+</br>
+
 ```
 One aim of the 5G design was to have a compact description for many code blocklengths, and one important enabling idea is to have many Z liftings defined for a single base graph.
 Associated to each edge in the base graph is a descriptor so that given a target lifting value of Z, the associated lifting value for the edge is derivable from the descriptor. 
 There are many ways to accomplish this, but we limit ourselves to a description of the method selected in 3GPP.
 ```
 - ?
+
+</br>
 
 ```
 The set of lifting sizes supported for the graph are all values of the form Z = A x 2j for A = {2, 3, 5, 7, 9, 11, 13, 15} and j = 0,1,… and includes all such Z in the range from 2 to 384. 
@@ -87,6 +91,10 @@ Thus, the entire set of liftings can be represented by five 9-bit values and thr
 ```
 - ?
 
+</br>
+</br>
+
+## 1. Multiple Base Graph
 ```
 Although the above described eight PCMs would suffice to meet the requirements of 5G NR, there is room for improvement in latency and throughput at smaller blocklengths by introducing smaller base graphs with a smaller number of variable nodes. 
 For a given blocklength, a relatively smaller base graph size implies a relatively larger Z and hence more parallelism in decoding operations. 
@@ -95,6 +103,8 @@ To achieve high code rate, however, the base graph cannot be too small.
 DE analysis predicts that smaller base graphs can perform well, with small gaps in capacity, although with reduced maximum code rate.
 ```
 - ?
+
+</br>
 
 ```
 Accordingly, 3GPP has agreed to consider two rate-compatible base graphs, BG1 and BG2, for the channel coding. 
@@ -105,6 +115,10 @@ More generally, a wider range of supported kb values would allow a wider range o
 ```
 - ? 
 
+</br>
+</br>
+
+## 2. Base Graph Shortening For Block Length Granularity
 ```
 Base graphs BG1 and BG2 have similar structure. 
 We focus our description on BG1, which is the main 5G NR high-rate base graph. 
@@ -119,6 +133,8 @@ This kind of design flexibility distinguishes the 5G NR LDPC from previous desig
 ```
 - ?
 
+</br>
+
 ```
 The specific base graph structure adopted for 5G NR in 3GPP is illustrated in Fig. 5 as a sketch of the BG1 PCM where a 1 in the matrix indicates the presence of a base edge. 
 The columns are broadly partitioned into three parts: information columns, core parity columns, and extension degree one parity-bit columns. 
@@ -130,6 +146,8 @@ Each degree one parity bit is then simply a parity of a subset of core variable 
 ```
 - ?
 
+</br>
+
 ```
 As described above, the total number of base information columns is kbmax. 
 Shortening at the base graph level is achieved by eliminating the right-most systematic columns so that the kb of the base graph in 5G NR is an adjustable parameter. 
@@ -138,15 +156,7 @@ In the next section we describe some of the design details that enable this flex
 ```
 - ?
 
-
 </br>
-
-## 1. Multiple Base Graph
-
-</br>
-
-## 2. Base Graph Shortening For Block Length Granularity
-
 </br>
 
 ## Reference
