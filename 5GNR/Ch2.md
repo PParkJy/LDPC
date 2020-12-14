@@ -26,7 +26,8 @@ A coding rate of 8/9 was chosen to meet the peak decoder throughput of 5 Gb/s, w
 - **정리**
   : 5G NR에서는 eMBB 시나리오같이 서로 다른 통신 요구사항을 만족시키기 위해 information 블록의 사이즈를 다양하게 지원할 수 있어야 하며 이에 상응하는 채널 코딩이 IR-HARQ를 지원하는 rate-compatible한 솔루션이 되도록 해야한다는 것     
   
-  
+</br>
+
 ```
 Supporting a wide range of code rates naturally aligns with the need to support IR-HARQ. 
 For example, a code with information blocklength K = 800 and rate 8/9, so N = 900, may need an IR-HARQ extension to N = 2400. 
@@ -34,7 +35,12 @@ That extension provides for a rate 1/3 code.
 Very often intermediate IR-HARQ extensions are also required, so the code should have good performance for rates from 8/9 down to 1/3. 
 A goal in the LDPC design is to have good performance across IR-HARQ extensions so that the design of the highest rate codes together with their IR-HARQ extensions inherently provide good codes for all desired rates.
 ```
-- ?
+- **LDPC 설계의 목표**    
+  : 사용자가 원하는 모든 속도를 지원할 수 있는 좋은 코드 제공    
+  : IR-HARQ를 지원하기 위해 확장(extension) 되는 데이터에도 좋은 성능을 보이는 것    
+  : 예) K = 800, N = 900, R=8/9 -> 에러 발견 및 재전송 요청 -> 송신측에서 추가 redundancy 전송 -> N=2400, R=800/2400=1/3    
+ 
+ </br>
 
 ```
 The 5G NR LDPC codes are, strictly speaking, a concatenation of an LDPC code and a low-density generator matrix (LDGM) code. 
