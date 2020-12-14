@@ -9,9 +9,9 @@ Thus, information blocklength sizes ranging from around 100 to 8000 need to be s
 A coding rate of 8/9 was chosen to meet the peak decoder throughput of 5 Gb/s, while a rate of 1/5 is needed to achieve extended coverage and meet the 100 Mb/s edge cell throughput goal.
 ```
 - **rate-compatible[1]**    
-  : 채널 등의 요구에 따라 코드의 레이트(R = K/N)를 바꿀 수 있는 것    
+  : 채널 등의 요구에 따라 코드의 rate(R = K/N)를 바꿀 수 있는 것    
   : 레이트가 변함에 따라 오류 정정을 위한 패리티 체크의 수가 변하므로 정정 능력에 영향을 미침     
-  : 높은 레이트의 코드가 낮은 레이트의 코드에 속해있게 되는 형태     
+  : high rate의 코드가 low rate의 코드에 속해있게 되는 형태     
 - **IR-HARQ[2]**    
   : Incremental Redundancy-Hybrid ARQ = FEC(Forward Error Correction) + ARQ(Automatic Repeat reQuest)    
   : FEC의 경우 잘 알고 있는 Error Correction Code와 같은 것, OSI 1계층 수준에서 처리    
@@ -52,7 +52,20 @@ For structural reasons that we describe shortly, the core portion of the graph d
 ```
 - **5G NR LDPC**    
   : 5G의 LDPC는 정확하게는 LDPC와 LDGM이 연접(concatenation)된 코드    
-  :
+  : LDGM(Low-Density Generator Matrix) = LDPC 계열, 아래 사진 참고    
+  ![image](https://user-images.githubusercontent.com/46422952/102057109-c0448380-3e30-11eb-8b01-a10e7e306276.png)    
+- **5G NR LDPC 구조**    
+  ![image](https://user-images.githubusercontent.com/46422952/102058283-a146f100-3e32-11eb-9661-1661818c429b.png)     
+  1. core    
+    : LDPC 부분    
+    : information + parity    
+    : 대부분 information으로 구성되므로 high rate    
+  2. extension    
+    : LDGM 부분    
+    : rate-compatible과 IR-HARQ를 위한 부분    
+    : Check node가 degree 1인 Variable node와 연결된 부분(1) + Check node가 core의 Variavle node와 연결된 부분(2)    
+    : (1) 부분은 IR-HARQ를 위한 확장 노드로 사용되는데 첫번째 row의 첫번째 column에 위치한 (1)의 첫번째 Variable Node는 특별하다고 함    
+    &nbsp;&nbsp;&nbsp;&nbsp; - core 부분만을 사용하면 성능이 좋지 않다고 알려져 있기 때문에 적어도 몇 개의 (1)부분을 포함시켜야 하므로 (1)의 첫번째 Variable Node는 항상 R 계산에 사용됨    
 
 ```
 One aim of the 5G design was to have a compact description for many code blocklengths, and one important enabling idea is to have many Z liftings defined for a single base graph.
