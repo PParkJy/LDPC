@@ -79,13 +79,16 @@ There are many ways to accomplish this, but we limit ourselves to a description 
   : 이 코드 블록 길이들을 하나씩 설명하는 게 아니라 간단하게 설명할 수 있도록 설계하는 것이 목표 중 하나!    
 - **base graph**    
   : 많은 코드를 설계하기 위해 base graph라는 개념 도입    
-  : H의 base graph -> lifting -> 실제 H
-- **lifting**    
-  :
-  : 논문에서는 base graph를 desciptor라고 설명하면서  
-  : 
-  
-  : Proto-Based Graph 
+  : H의 base graph -> lifting -> 실제 H의 Tanner graph   
+- **lifting**
+  ![image](https://user-images.githubusercontent.com/46422952/102076304-e0813c00-3e4a-11eb-8701-9b4eb7560b68.png)    
+  : base graph를 사용하여 H를 만드는 과정     
+  : copy + permutation으로 구성됨 
+  &nbsp;&nbsp; 1) copy    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : lifing size Z만큼 기존의 엣지들 복제    
+  &nbsp;&nbsp; 2) permutation    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : shift value라는 값만큼 연결 관계를 이동시키는 것    
+  : 논문에서는 base graph를 desciptor라고 표현하면서 base graph와 Z를 사용해서 엣지를 위한 어떤 값(사실 shift value)을 계산할 수 있다고 함    
   
 </br>
 
@@ -100,7 +103,10 @@ For each edge E in the base graph and each A, an integer value L(A, E) in the ra
 Then, for a target lifting size Z = A2^j , the lifting value associated with the edge E is given by L(A, E) modulo Z. 
 Thus, the entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
 ```
-- ?
+- **lifting size Z**     
+  ![image](https://user-images.githubusercontent.com/46422952/102077395-95682880-3e4c-11eb-9157-c9f3a760a951.png)
+  : 
+  : 
 
 </br>
 </br>
