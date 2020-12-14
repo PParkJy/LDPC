@@ -54,7 +54,7 @@ For structural reasons that we describe shortly, the core portion of the graph d
   : 5G의 LDPC는 정확하게는 LDPC와 LDGM이 연접(concatenation)된 코드    
   : LDGM(Low-Density Generator Matrix) = LDPC 계열, 아래 사진 참고    
   ![image](https://user-images.githubusercontent.com/46422952/102057109-c0448380-3e30-11eb-8b01-a10e7e306276.png)    
-###### 5G NR LDPC structure
+#### - &nbsp;&nbsp;&nbsp;&nbsp; 5G NR LDPC structure
   ![image](https://user-images.githubusercontent.com/46422952/102058283-a146f100-3e32-11eb-9661-1661818c429b.png)     
   1. core    
     : LDPC 부분    
