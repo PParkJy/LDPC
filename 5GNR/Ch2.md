@@ -201,7 +201,7 @@ This kind of design flexibility distinguishes the 5G NR LDPC from previous desig
   &nbsp;&nbsp; -> sub-column shortening
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : base graph의 가장 마지막 블록을 shortening    
   : 앞에서 봤던 것처럼 많은 Z가 있긴 한데 사용자가 원하는 모든 k_b의 범위를 지원할 수는 없음     
-  &nbsp;&nbsp; -> 예를 들면, Z가 2일 땐 k_b 범위가 42 ~ 44이고, 3일 땐 63~66이므로 44 ~ 63만큼의 k_b는 만들 수 없단 것!     
+  &nbsp;&nbsp; -> 예를 들면, Z가 2일 땐 k_b 범위가 42 ~ 44이고, 3일 땐 63 ~ 66이므로 44 ~ 63만큼의 k_b는 만들 수 없단 것!     
   : 더 많은 범위를 지원할 수 있게 하기 위해 base graph에 추가적인 shortening을 하는 방법이 제안됨     
   &nbsp;&nbsp; -> additional base graph shortening     
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 8보다 큰 Z에 대해서 Z1과 Z1보다 작은 Z 중 가장 큰 Z2가 있을 때 (즉, 리프팅 사이즈 Z 리스트를 오름차순으로 정렬했을 때 Z2 다음에 Z1이 나오는 것) Z1과 Z2의 비율을 계산해봤을 때 가장 큰 비율이 9/8이었다고 함          
