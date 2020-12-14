@@ -104,10 +104,24 @@ Then, for a target lifting size Z = A2^j , the lifting value associated with the
 Thus, the entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
 ```
 - **lifting size Z**     
-  ![image](https://user-images.githubusercontent.com/46422952/102077395-95682880-3e4c-11eb-9157-c9f3a760a951.png)
-  : 
-  : 
-
+  : Z = A * 2^j, 2 <= Z <= 384    
+  : A = {2, 3, 5, 7, 9, 11, 13, 15}    
+  : j = 0 이상의 정수 (실제로는 Z의 제한때문에 j <= 0 <= 7)    
+  : 각 A에 대해 계산되는 Z(A) = A * 2^j, 범위 내에서 최대인 Z(A)를 만드는 j가 존재 (ex: A=3 -> 최대 Z(A)를 만드는 j=7)    
+  ![image](https://user-images.githubusercontent.com/46422952/102077395-95682880-3e4c-11eb-9157-c9f3a760a951.png)     
+  : 참고로 작은 Z들이 실제로 사용되는지는 확실하진 않지만 일단 정의는 되어있음        
+- **shift value 계산**    
+  : base graph의 각 엣지 E와 A 사이에는 0 ~ Z(A) - 1의 값을 가지는 L(A,E)라는 정수값이 매칭되어 있음    
+  : 정확한 설명을 위해 논문의 A와 일대일 대응 관계인 i_LS라는 5G 표준문서의 용어를 사용해서 재설명    
+  : Z는 i_LS에 따라 8개의 집합으로 분류됨 -> 즉, Z가 정해진다면 i_LS를 정할 수 있음           
+  : i_LS를 기준으로 엣지마다 정해져있는 L(A,E)를 찾을 수 있음    
+  : L(A,E) mod Z = shift value (논문에서는 lifing value associated with the egde라고 표현됨)    
+- **bit 표현 (이해안됨ㅎ)**   
+  ```
+  entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
+  ```    
+  : 대체 무슨 말인지..?    
+  
 </br>
 </br>
 
