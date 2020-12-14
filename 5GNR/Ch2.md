@@ -58,7 +58,7 @@ For structural reasons that we describe shortly, the core portion of the graph d
   ![image](https://user-images.githubusercontent.com/46422952/102058283-a146f100-3e32-11eb-9661-1661818c429b.png)     
   1. core    
     : LDPC 부분    
-    : information + parity    
+    : information(k_bmax개의 column) + parity (m_core개의 column)    
     : 대부분 information으로 구성되므로 high rate    
   2. extension    
     : LDGM 부분    
@@ -79,14 +79,14 @@ There are many ways to accomplish this, but we limit ourselves to a description 
 </br>
 
 ```
-The set of lifting sizes supported for the graph are all values of the form Z = A x 2j for A = {2, 3, 5, 7, 9, 11, 13, 15} and j = 0,1,… and includes all such Z in the range from 2 to 384. 
-This includes Z = 2j x {2, 3, 5, 7, 9, 11, 13, 15} for j = 0, 1, 2, 3, 4, 5 excluding those values exceeding Z = 384. 
+The set of lifting sizes supported for the graph are all values of the form Z = A x 2^j for A = {2, 3, 5, 7, 9, 11, 13, 15} and j = 0,1,… and includes all such Z in the range from 2 to 384. 
+This includes Z = 2^j x {2, 3, 5, 7, 9, 11, 13, 15} for j = 0, 1, 2, 3, 4, 5 excluding those values exceeding Z = 384. 
 Thus, the full lifting set Z is given by {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 28, 30, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 88, 96, 104, 112, 120, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384}. 
 It is not clear that all lifting values, especially the small ones, will be used, but all are defined. 
 The lifting values are organized into eight sets, one for each value of A. 
-For each A, there is maximal Z(A) = A2j for some maximal j = j(A). 
+For each A, there is maximal Z(A) = A2^j for some maximal j = j(A). 
 For each edge E in the base graph and each A, an integer value L(A, E) in the range [0, Z(A) – 1] is specified. 
-Then, for a target lifting size Z = A2j , the lifting value associated with the edge E is given by L(A, E) modulo Z. 
+Then, for a target lifting size Z = A2^j , the lifting value associated with the edge E is given by L(A, E) modulo Z. 
 Thus, the entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
 ```
 - ?
