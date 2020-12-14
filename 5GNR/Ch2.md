@@ -193,7 +193,12 @@ Thus, for a sufficiently large target information blocklength K, if Z is the sma
 Good performance can be expected if the base graph is designed to give good performance not just for kb = kbmax = 22 but also for kb = 19,20,21. 
 This kind of design flexibility distinguishes the 5G NR LDPC from previous designs.
 ```
-- ?
+- **BG1**  
+  : BG1과 BG2는 비슷한 구조를 가지고 있는데 논문에서는 더 높은 R을 제공하는 BG1을 중점으로 설명    
+  : 현재는 information block length k_b를 22만 지원 -> 즉, k_bmax = 22이고 다음에 설명하는 바에 따르면 이보다 작은 k_b도 사용 가능할 것이라 함     
+  : sub-column shortening에 의해 
+  : 
+  
 
 </br>
 
@@ -206,7 +211,9 @@ The rows are broadly partitioned into two parts: core check rows and extension c
 The bits in the core parity columns are solved so that the core parity checks are satisfied. 
 Each degree one parity bit is then simply a parity of a subset of core variable nodes.
 ```
-- ?
+- **BG1의 구조**    
+  ![image](https://user-images.githubusercontent.com/46422952/102083278-a453d880-3e56-11eb-995f-1580bd09bae9.png)    
+
 
 </br>
 
