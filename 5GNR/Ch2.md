@@ -116,11 +116,13 @@ Thus, the entire set of liftings can be represented by five 9-bit values and thr
   : Z는 i_LS에 따라 8개의 집합으로 분류됨 -> 즉, Z가 정해진다면 i_LS를 정할 수 있음           
   : i_LS를 기준으로 엣지마다 정해져있는 L(A,E)를 찾을 수 있음    
   : L(A,E) mod Z = shift value (논문에서는 lifing value associated with the egde라고 표현됨)    
-- **bit 표현 (이해안됨ㅎ)**   
+- **bit 표현**   
   ```
   entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
   ```    
-  : 대체 무슨 말인지..? 별로 안중요한 것 같아서 넘어감~~     
+  : 8bit는 0~255까지, 9bit는 0~511까지 표현 가능   
+  : 리프팅 사이즈 Z 집합을보면 iLS=0, 1, 2, 4, 5 총 5가지 경우는 9bit으로 표현 가능하며 나머지 3 경우는 8 bit으로 표현 가능    
+  : 별로 안중요한 것 같아요 호호호호호     
   
 </br>
 </br>
