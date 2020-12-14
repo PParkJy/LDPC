@@ -65,7 +65,7 @@ For structural reasons that we describe shortly, the core portion of the graph d
     : rate-compatible과 IR-HARQ를 위한 부분    
     : Check node가 degree 1인 Variable node와 연결된 부분(1) + Check node가 core의 Variavle node와 연결된 부분(2)    
     : (1) 부분은 IR-HARQ를 위한 확장 노드로 사용되는데 첫번째 row의 첫번째 column에 위치한 (1)의 첫번째 Variable Node는 특별하다고 함    
-    &nbsp;&nbsp;&nbsp;&nbsp; - core 부분만을 사용하면 성능이 좋지 않다고 알려져 있기 때문에 적어도 몇 개의 (1)부분을 포함시켜야 하므로 (1)의 첫번째 Variable Node는 항상 R 계산에 사용됨    
+    &nbsp;&nbsp; -> core 부분만을 사용하면 성능이 좋지 않다고 알려져 있기 때문에 적어도 몇 개의 (1)부분을 포함시켜야 하므로 (1)의 첫번째 Variable Node는 항상 R 계산에 사용됨    
 
 ```
 One aim of the 5G design was to have a compact description for many code blocklengths, and one important enabling idea is to have many Z liftings defined for a single base graph.
