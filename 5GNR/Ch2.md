@@ -74,8 +74,19 @@ One aim of the 5G design was to have a compact description for many code blockle
 Associated to each edge in the base graph is a descriptor so that given a target lifting value of Z, the associated lifting value for the edge is derivable from the descriptor. 
 There are many ways to accomplish this, but we limit ourselves to a description of the method selected in 3GPP.
 ```
-- ?
-
+- **5G 설계 목표**    
+  : 위에서 언급했듯이 5G NR에서는 코드의 블록길이가 다양하게 지원되어야 함     
+  : 이 코드 블록 길이들을 하나씩 설명하는 게 아니라 간단하게 설명할 수 있도록 설계하는 것이 목표 중 하나!    
+- **base graph**    
+  : 많은 코드를 설계하기 위해 base graph라는 개념 도입    
+  : H의 base graph -> lifting -> 실제 H
+- **lifting**    
+  :
+  : 논문에서는 base graph를 desciptor라고 설명하면서  
+  : 
+  
+  : Proto-Based Graph 
+  
 </br>
 
 ```
