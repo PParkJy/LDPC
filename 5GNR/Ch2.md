@@ -252,4 +252,8 @@ In the next section we describe some of the design details that enable this flex
 ## Reference
 [1] J. Hagenauer, "Rate-compatible punctured convolutional codes (RCPC codes) and their applications," in IEEE Transactions on Communications, vol. 36, no. 4, pp. 389-400, April 1988.   
 [2] https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request   
-[3] https://en.wikipedia.org/wiki/Systematic_code    
+[3] https://en.wikipedia.org/wiki/Systematic_code     
+[img 1]    
+[img 2]    
+[img 4]    
+[img 7] Cassuto, Yuval & Schwartz, Moshe & Bohossian, Vasken & Bruck, Jehoshua, "Codes for Multi-Level Flash Memories: Correcting Asymmetric Limited-Magnitude Errors", IEEE International Symposium on Information Theory - Proceedings, 1176 - 1180.    
