@@ -120,7 +120,7 @@ Thus, the entire set of liftings can be represented by five 9-bit values and thr
   ```
   entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
   ```    
-  : 대체 무슨 말인지..?    
+  : 대체 무슨 말인지..? 별로 안중요한 것 같아서 넘어감~~     
   
 </br>
 </br>
@@ -173,9 +173,8 @@ More generally, a wider range of supported kb values would allow a wider range o
   : 낮은 R (1/5 ≤ r ≤ 2/3)    
   : information block length k_b 6 ~ 10    
   : 최대 Z=256 (384로 늘려서 하드웨어 병렬화 고려 중)     
-- **etc**
-  : 지원가능한 information block length k_b의 범위가 넓어진다면 더 다양한 R과 블록 사이즈를 사용할 수 있고, 하드웨어 병렬 처리에도 활용할 수 있을 것이라고 한다.    
-
+- **etc**     
+  : 지원가능한 information block length k_b의 범위가 넓어진다면 더 다양한 R과 블록 사이즈를 사용할 수 있고, 하드웨어 병렬 처리에도 활용할 수 있을 것이라고 한다.       
 
 </br>
 </br>
@@ -196,8 +195,19 @@ This kind of design flexibility distinguishes the 5G NR LDPC from previous desig
 - **BG1**  
   : BG1과 BG2는 비슷한 구조를 가지고 있는데 논문에서는 더 높은 R을 제공하는 BG1을 중점으로 설명    
   : 현재는 information block length k_b를 22만 지원 -> 즉, k_bmax = 22이고 다음에 설명하는 바에 따르면 이보다 작은 k_b도 사용 가능할 것이라 함     
-  : sub-column shortening에 의해 
-  : 
+  : sub-column shortening을 사용한다면 하나의 Z에 대해 21 * Z ~ 22 * Z라는 information block length k_b가 지원될 수 있음    
+  &nbsp;&nbsp; -> sub-column shortening
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : base graph의 가장 마지막 블록을 shortening    
+  : 앞에서 봤던 것처럼 많은 Z가 있긴 한데 사용자가 원하는 모든 k_b의 범위를 지원할 수는 없음     
+  &nbsp;&nbsp; -> 예를 들면, Z가 2일 땐 k_b 범위가 42~44이고, 3일 땐 63~66이므로 44~63만큼의 k_b는 만들 수 없단 것!     
+  : 더 많은 범위를 지원할 수 있게 하기 위해 base graph에 추가적인 shortening을 하는 방법이 제안됨     
+  &nbsp;&nbsp; -> additional base graph shortening     
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 8보다 큰 Z에 대해서 Z1과 Z1보다 작은 Z 중 가장 큰 Z2가 있을 때 (즉, 리프팅 사이즈 Z 리스트를 오름차순으로 정렬했을 때 Z2 다음에 Z1이 나오는 것) Z1과 Z2의 비율을 계산해봤을 때 가장 큰 비율이 9/8이었다고 함          
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 사용자가 원하는 리프팅 후의 information block length K가 있을 때 k_bmax가 22이므로 K ≤ 22 * Z를 만족하는 가장 작은 Z를 찾아야 함! (어차피 더 큰 Z를 써봤자 낭비일 뿐....)     
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 이 때 찾고자 하는 Z라고 한다면 22 * Z2 ~ 22 * Z1 사이에 K가 있다고 볼 수 있음. 즉, Z = Z1이 되는 것! (왜냐면 Z2와 Z1은 정해진 게 아니라 걍 Z 리스트에서 연속된 순서인 두 Z를 가져오는 것이기 때문에 8보다 큰 Z들에 대해 K가 어느 Z2와 Z1 사이 구간에 속하는 건지 확인하는 것이므로!)    
+  : 하지만 Z는 K보다 크므로 shortening이 들어가게 되는데 이 때 Z1과 Z2의 최대 비율이 9/8이었다는 건 Z2가 Z1의 8/9배라는 것을 말하므로 22 * Z1 * 1/9 정도 shortening하면 K를 얻을 수 있는 것!    
+  : base graph가 현재 BG1의 k_b이자 k_bmax인 22보다 더 작은 19, 20, 21에도 좋은 성능을 보이도록 설계된다면 좋은 결과를 기대할 수 있을 것이라 함    
+  : 즉, BG2처럼 유연한 디자인을 할 수 있게 되고 이는 이전 설계와의 차이점이라 함    
   
 
 </br>
