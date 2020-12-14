@@ -12,7 +12,7 @@ Richardson, Tom & Kudekar, Shrinivas, <a href="https://ieeexplore.ieee.org/docum
 #### <a href="./Ch2.md">2.Meeting NR Block Length and Rate Requirements</a> (<- 클릭)
 - Multiple Base Graphs
 - Base Graph Shortening For Blocklength Granularity
-#### 3. 5G NR LDPC Design Details
+#### <a href="./Ch3.md">3. 5G NR LDPC Design Details</a>
 - Structure Of The Code Graph
 - Extension Structure
 - Lifting Design
