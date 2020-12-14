@@ -136,7 +136,7 @@ To achieve high code rate, however, the base graph cannot be too small.
 DE analysis predicts that smaller base graphs can perform well, with small gaps in capacity, although with reduced maximum code rate.
 ```
 - **small base graph**    
-  : 적은 수의 Variable Node(N) -> 작은 블록 길이
+  : 적은 수의 Variable Node(N) -> 작은 블록 길이    
   : 높은 R을 위해 너무 작아서도 안됨    
   : Density evolution 분석에 의하면 small base graph는 R은 줄어들지만 capacity와는 적은 차이 즉, 좋은 성능을 보인다고 함.    
   : 리프팅 후의 전체 블록 길이는 Z * N으로 계산되므로 base graph의 블록 길이(N)가 고정된다면 상대적으로 Z가 커질 수 있음    
