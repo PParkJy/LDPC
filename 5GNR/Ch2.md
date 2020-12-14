@@ -120,7 +120,7 @@ Thus, the entire set of liftings can be represented by five 9-bit values and thr
   ```
   entire set of liftings can be represented by five 9-bit values and three 8-bit values (a 69-bit descriptor) per edge.
   ```    
-  : 8bit는 0~255까지, 9bit는 0~511까지 표현 가능   
+  : 8bit는 0 ~ 255까지, 9bit는 0 ~ 511까지 표현 가능   
   : 리프팅 사이즈 Z 집합을보면 iLS=0, 1, 2, 4, 5 총 5가지 경우는 9bit으로 표현 가능하며 나머지 3 경우는 8 bit으로 표현 가능    
   : 별로 안중요한 것 같아요 호호호호호     
   
