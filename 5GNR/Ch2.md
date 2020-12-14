@@ -240,7 +240,10 @@ In the next section we describe some of the design details that enable this flex
 ```
 - **요약**    
   : base graph의 전체 information block length는 k_bmax.    
-  : 하지만 base graph에서 shortening을 사용한다면 information block length k_b는 조절가능한 변수가 되며, 이 shortening은 가장 우측의 systematic한 열들을 삭제하는 것과 같음    
+  : 하지만 base graph에서 shortening을 사용한다면 information block length k_b는 조절가능한 변수가 되며, 이 shortening은 가장 우측의 systematic[3]한 열들을 삭제하는 것과 같음   
+  &nbsp;&nbsp; -> systematic    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 인코딩 후의 코드워드에 기존의 메시지가 그대로 내장되어있는 것     
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![image](https://user-images.githubusercontent.com/46422952/102089632-d9b0f400-3e5f-11eb-8bb0-a239851779d8.png)    
   : 또한 core와 IR-HARQ를 지원하는 extension 부분 즉, 모든 부분에서 좋은 성능을 보이도록 설계되어야 함    
 
 </br>
@@ -248,4 +251,5 @@ In the next section we describe some of the design details that enable this flex
 
 ## Reference
 [1] J. Hagenauer, "Rate-compatible punctured convolutional codes (RCPC codes) and their applications," in IEEE Transactions on Communications, vol. 36, no. 4, pp. 389-400, April 1988.   
-[2] https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request  
+[2] https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request   
+[3] https://en.wikipedia.org/wiki/Systematic_code    
