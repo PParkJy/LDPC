@@ -6,7 +6,7 @@ Richardson, Tom & Kudekar, Shrinivas, <a href="https://ieeexplore.ieee.org/docum
 
 ## Index
 #### 0. Abstract
-#### 1. Introduction    
+#### <a href="./Ch1.md">1. Introduction</a>    
 - 5G NR Switches To LDPC Codes    
 - LDPC Codes
 #### <a href="./Ch2.md">2.Meeting NR Block Length and Rate Requirements</a> (<- 클릭)
