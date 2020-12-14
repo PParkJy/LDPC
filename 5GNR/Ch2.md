@@ -54,7 +54,7 @@ For structural reasons that we describe shortly, the core portion of the graph d
   : 5G의 LDPC는 정확하게는 LDPC와 LDGM이 연접(concatenation)된 코드    
   : LDGM(Low-Density Generator Matrix) = LDPC 계열, 아래 사진 참고    
   ![image](https://user-images.githubusercontent.com/46422952/102057109-c0448380-3e30-11eb-8b01-a10e7e306276.png)    
-- **5G NR LDPC 구조**    
+- **[5G NR LDPC 구조](#5G-NR-LDPC-structure)**    
   ![image](https://user-images.githubusercontent.com/46422952/102058283-a146f100-3e32-11eb-9661-1661818c429b.png)     
   1. core    
     : LDPC 부분    
@@ -213,7 +213,10 @@ Each degree one parity bit is then simply a parity of a subset of core variable 
 ```
 - **BG1의 구조**    
   ![image](https://user-images.githubusercontent.com/46422952/102083278-a453d880-3e56-11eb-995f-1580bd09bae9.png)    
-  : 위에서 설명했으니 넘어가겠음~    
+  ###### 5G NR LDPC structure    
+  : 대부분 여기서 설명한 것과 같음!    
+  :
+
 
 </br>
 
@@ -223,7 +226,7 @@ Shortening at the base graph level is achieved by eliminating the right-most sys
 The design of both the core and the IR-HARQ portion should be done so as to provide good performance. 
 In the next section we describe some of the design details that enable this flexible design to yield very good code performance across the full range of block lengths and code rates.
 ```
-- **요약**
+- **요약**    
   : base graph의 전체 information block length는 k_bmax.
   : 하지만 base graph에서 shortening을 사용한다면 information block length k_b는 조절가능한 변수가 되며, 이 shortening은 가장 우측의 systematic한 열들을 삭제하는 것과 같음    
   : 또한 core와 IR-HARQ를 지원하는 extension 부분 즉, 모든 부분에서 좋은 성능을 보이도록 설계되어야 함    
