@@ -133,8 +133,26 @@ More parallelism in decoding implies lower latency and higher throughput.
 To achieve high code rate, however, the base graph cannot be too small. 
 DE analysis predicts that smaller base graphs can perform well, with small gaps in capacity, although with reduced maximum code rate.
 ```
-- ?
-
+- **small base graph**    
+  : 적은 수의 Variable Node(N) -> 작은 블록 길이
+  : 높은 R을 위해 너무 작아서도 안됨
+  : Density evolution 분석에 의하면 small base graph는 R은 줄어들지만 capacity와는 적은 차이 즉, 좋은 성능을 보인다고 함.    
+  : 리프팅 후의 전체 블록 길이는 Z * N으로 계산되므로 base graph의 블록 길이(N)가 고정된다면 상대적으로 Z가 커질 수 있음    
+- **Z와 병렬화**    
+  : 리프팅 = copy + permutation 인데 만약 permutation이 cyclic permutation이라면 Quasi-Cyclic LDPC가 될 수 있음    
+  &nbsp;&nbsp; -> Quasi-Cyclic code
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 코드워드의 비트를 순환적으로 이동 (마지막 비트는 처음으로 이동)시킨 코드워드가 코드에 속한다면 cyclic code    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 코드워드를 블록으로 나누고, 몇 개의 블록에서 순환적으로 이동시킨 코드워드가 코드에 속한다면 Quasi-Cyclic code    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 리프팅 후의 Quasi-Cyclic code는 여러개의 circulant matrix (Z x Z)가 모여있는 형태    
+  : circulant matrix의 각 열/행은 첫번째 열/행부터 shift된 것    
+  : 즉, shift value만 알면 첫번째 열/행에서 마지막 열/행까지의 연결 관계를 파악할 수 있음    
+  : 여러개의 circulant matrix의 첫번째 열/행들만 모아서 디코딩하는 프로그램을 만든다면 shift value에 의해 다음 열/행들의 연결관계를 파악할 수 있으므로 똑같은 프로그램을 재사용 가능    
+  : circulant matrix의 크기가 ZxZ이므로 총 Z개의 프로그램을 동시에 돌릴 수 있으므로 Z개로 병렬화 가능    
+  : 병렬화에 따라 대기 시간(latency)가 감소하며, 처리량(throughput)은 늘릴 수 있음    
+- **정리**    
+  : small base graph를 사용하면 Z가 커지는 효과가 있고 그에 따라 많은 병렬처리를 할 수 있기에 low latency, high throuput의 장점이 있으나 code rate은 감소할 수 있다.    
+  
+  
 </br>
 
 ```
