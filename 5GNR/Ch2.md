@@ -23,7 +23,7 @@ A coding rate of 8/9 was chosen to meet the peak decoder throughput of 5 Gb/s, w
   : 성능 이득을 위해 큰 블록 길이를 사용하여 큰 전송 프레임을 보내는 경우도 있고, 몇백개 정도의 비트만 사용해서 단일 블록만 사용하는 경우도 있음 => 다양한 전송 상황 존재       
   : 즉, information 블록 길이를 100 ~ 8000 정도로 다양하게 지원해야 하는 것이 필요    
   : 예) 핫스팟, 큰 용량을 다운받는 것같이 5Gb/s 정도의 높은 처리량을 요구할 때는 R=8/9, 이동성을 고려할 때는 처리 속도가 100Mb/s로 떨어지지만 넓은 셀 영역을 커버할 수 있도록 R= 1/5    
-- **정리**
+- **정리**    
   : 5G NR에서는 eMBB 시나리오같이 서로 다른 통신 요구사항을 만족시키기 위해 information 블록의 사이즈를 다양하게 지원할 수 있어야 하며 이에 상응하는 채널 코딩이 IR-HARQ를 지원하는 rate-compatible한 솔루션이 되도록 해야한다는 것     
   
 </br>
@@ -50,7 +50,9 @@ All additional variable nodes are extension degree one variable nodes each conne
 In general, the degree one variable nodes are the extension nodes used for IR-HARQ but the first degree one variable node is special for reasons discussed below, and is included in all code rates. 
 For structural reasons that we describe shortly, the core portion of the graph does not perform very well without including at least some of the first degree one parity bits.
 ```
-- ?
+- **5G NR LDPC**    
+  : 5G의 LDPC는 정확하게는 LDPC와 LDGM이 연접(concatenation)된 코드    
+  :
 
 ```
 One aim of the 5G design was to have a compact description for many code blocklengths, and one important enabling idea is to have many Z liftings defined for a single base graph.
