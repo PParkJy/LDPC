@@ -140,7 +140,7 @@ DE analysis predicts that smaller base graphs can perform well, with small gaps 
   : 리프팅 후의 전체 블록 길이는 Z * N으로 계산되므로 base graph의 블록 길이(N)가 고정된다면 상대적으로 Z가 커질 수 있음    
 - **Z와 병렬화**    
   : 리프팅 = copy + permutation 인데 만약 permutation이 cyclic permutation이라면 Quasi-Cyclic LDPC가 될 수 있음    
-  &nbsp;&nbsp; -> Quasi-Cyclic code
+  &nbsp;&nbsp; -> Quasi-Cyclic code    
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 코드워드의 비트를 순환적으로 이동 (마지막 비트는 처음으로 이동)시킨 코드워드가 코드에 속한다면 cyclic code    
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 코드워드를 블록으로 나누고, 몇 개의 블록에서 순환적으로 이동시킨 코드워드가 코드에 속한다면 Quasi-Cyclic code    
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 리프팅 후의 Quasi-Cyclic code는 여러개의 circulant matrix (Z x Z)가 모여있는 형태    
@@ -151,8 +151,7 @@ DE analysis predicts that smaller base graphs can perform well, with small gaps 
   : 병렬화에 따라 대기 시간(latency)가 감소하며, 처리량(throughput)은 늘릴 수 있음    
 - **정리**    
   : small base graph를 사용하면 Z가 커지는 효과가 있고 그에 따라 많은 병렬처리를 할 수 있기에 low latency, high throuput의 장점이 있으나 code rate은 감소할 수 있다.    
-  
-  
+   
 </br>
 
 ```
@@ -162,7 +161,21 @@ The range of kb is [19, 22] and [6, 10] for BG1 and BG2, respectively.
 The maximum Z for BG2 is limited to 256; extending this to 384 would make better use of available hardware and is under consideration. 
 More generally, a wider range of supported kb values would allow a wider range of code rates and block sizes to utilize full hardware parallelism, but this idea was not pursued in 3GPP.
 ```
-- ? 
+- **2개의 Base Graph**    
+  : 서로 다른 요구사항을 고려하는 Base Graph 2개가 제안됨    
+- **BG1**
+  : 큰 블록길이 (500 ≤ K ≤ 8448)     
+  : 높은 R (1/3 ≤ r ≤ 8/9)    
+  : information block length k_b 19 ~ 22     
+  : 최대 Z=384     
+- **BG2**     
+  : 작은 블록길이 (40 ≤ K ≤ 2560)     
+  : 낮은 R (1/5 ≤ r ≤ 2/3)    
+  : information block length k_b 6 ~ 10    
+  : 최대 Z=256 (384로 늘려서 하드웨어 병렬화 고려 중)     
+- **etc**
+  : 지원가능한 information block length k_b의 범위가 넓어진다면 더 다양한 R과 블록 사이즈를 사용할 수 있고, 하드웨어 병렬 처리에도 활용할 수 있을 것이라고 한다.    
+
 
 </br>
 </br>
