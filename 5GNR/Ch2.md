@@ -198,7 +198,7 @@ This kind of design flexibility distinguishes the 5G NR LDPC from previous desig
   : BG1과 BG2는 비슷한 구조를 가지고 있는데 논문에서는 더 높은 R을 제공하는 BG1을 중점으로 설명    
   : 현재는 information block length k_b를 22만 지원 -> 즉, k_bmax = 22이고 다음에 설명하는 바에 따르면 이보다 작은 k_b도 사용 가능할 것이라 함     
   : sub-column shortening을 사용한다면 하나의 Z에 대해 21 * Z ~ 22 * Z라는 information block length k_b가 지원될 수 있음    
-  &nbsp;&nbsp; -> sub-column shortening
+  &nbsp;&nbsp; -> sub-column shortening     
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : base graph의 가장 마지막 블록을 shortening    
   : 앞에서 봤던 것처럼 많은 Z가 있긴 한데 사용자가 원하는 모든 k_b의 범위를 지원할 수는 없음     
   &nbsp;&nbsp; -> 예를 들면, Z가 2일 땐 k_b 범위가 42 ~ 44이고, 3일 땐 63 ~ 66이므로 44 ~ 63만큼의 k_b는 만들 수 없단 것!     
